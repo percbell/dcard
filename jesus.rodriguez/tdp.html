@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación Digital - INEGI</title>
+    
+    <style>
+        /* --- ESTILOS BASE Y RECIPIENTE DE LA VIEJA ESCUELA --- */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #eef2f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Chasis principal estilo tarjeta física ejecutiva */
+        .tarjeta-presentacion {
+            background: #ffffff;
+            border: 2px solid #333333;
+            box-shadow: 6px 6px 0px #333333; /* Sombra sólida retro */
+            width: 100%;
+            max-width: 500px; /* Ancho estándar de tarjeta en escritorio */
+            min-height: 280px;
+            padding: 30px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /* Cintillo decorativo superior con el azul de La Máquina */
+        .cintillo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: #0056b3; 
+        }
+
+        .nombre {
+            margin: 10px 0 2px 0;
+            font-size: 20px;
+            font-weight: 700;
+            color: #111111;
+            letter-spacing: -0.5px;
+        }
+
+        .cargo {
+            font-size: 11px;
+            font-weight: bold;
+            color: #0056b3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .bloque-contacto {
+            border-top: 1px solid #cccccc;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        .tabla-datos {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            color: #333333;
+            line-height: 1.8;
+        }
+
+        .tabla-datos td {
+            padding: 4px 0;
+        }
+
+        .icono {
+            width: 30px;
+            font-size: 15px;
+            vertical-align: top;
+        }
+
+        .enlace-contacto {
+            color: #111111;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .enlace-contacto:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .pie-tarjeta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 20px;
+            font-size: 9px;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ======================================================================= */
+        /* --- MEDIA QUERY: DETECTA PANTALLAS CHICAS DE CELULAR                    */
+        /* ======================================================================= */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px; /* Menos espacio exterior en cels */
+            }
+            .tarjeta-presentacion {
+                padding: 20px; /* Ajuste interno para pantallas angostas */
+                box-shadow: 4px 4px 0px #333333;
+                min-height: auto; /* Que crezca verticalmente si el texto se dobla */
+            }
+            .nombre {
+                font-size: 22px; /* Reducimos tipografía para que no se encime */
+            }
+            .cargo {
+                font-size: 10px;
+                margin-bottom: 15px;
+            }
+            .tabla-datos {
+                font-size: 12px; /* Datos un poco más compactos en pantalla móvil */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CONTENEDOR FLUIDO RESPONSIVO -->
+    <div class="tarjeta-presentacion">
+        <!-- Barra de color superior -->
+        <div class="cintillo"></div>
+
+        <!-- ENCABEZADO: IDENTIDAD Y LOGO LOCAL -->
+         <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 15px;">
+            <!-- Ruta local al archivo PNG que vas a subir a la carpeta -->
+            <img src="logoi.png" 
+                 alt="INEGI" 
+                 style="width: 85px; height: auto; max-width: 100%; object-fit: contain; margin-top: 10px; margin-left: auto;">
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 15px;">
+            <div>
+                <div class="nombre">JESÚS HUMBERTO RODRÍGUEZ BARÓN</div>
+                <div class="cargo">ENLACE DE COORDINACIÓN DE PROYECTOS</div>
+            </div>
+         </div>
+
+
+        <!-- CUERPO: DATOS DE CONTACTO CORREGIDOS -->
+        <div class="bloque-contacto">
+            <table class="tabla-datos">
+                <tr>
+                    <td class="icono">✉️</td>
+                    <td><a href="mailto:jesus.rodriguez@inegi.org.mx" class="enlace-contacto">jesus.rodriguez@inegi.org.mx</a></td>
+                </tr>
+                <tr>
+                    <td class="icono">📞</td>
+                    <td><a href="tel:5551307900,321041" class="enlace-contacto">+52 (55) 5130-7900 Ext. 321041</a></td>
+                </tr>
+                <tr>
+                    <td class="icono">📍</td>
+                    <td style="color: #555555; line-height: 1.6;">
+                        <strong>Dirección Regional Centro</strong><br>
+                        Coordinación Estatal CDMX Sur<br>
+                        Av. Cuauhtémoc 451, Piso 7, Col. Piedad Narvarte, C.P. 03000<br>
+                        Demarcación Territorial Benito Juárez, Ciudad de México<br>
+                    </td>
+                </tr>
+                <!-- APARTADO NUEVO: HORARIO DE ATENCIÓN -->
+                <tr>
+                    <td class="icono">🕒</td>
+                    <td style="color: #444444; font-size: 12px; padding-top: 8px;">
+                        <strong>Horario de atención:</strong> de lunes a viernes de 09:00 a 16:30
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- PIE DE TARJETA: VALIDACIÓN INSTITUCIONAL -->
+        <div class="pie-tarjeta">
+            <span>Tarjeta Presentación Digital</span>
+           </div>
+    </div>
